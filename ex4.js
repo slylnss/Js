@@ -24,38 +24,40 @@ for (i=0; i<=10; i++)
 	console.log(i + " * " + nbr + " = " + result);
 }
 
-/*Exercice 3
-
-var score=60;
-
-
-	var grade = function(score){
-		score+=1;
-		return score;				
+//Exercice 3
+var grade= function(score){
+	if (score>=90){
+		message ="Votre grade est A";
+	}else if (score >=80 && score <=89){
+		message ="Votre grade est B";
+	}else if (score >=70 && score <=79){
+		message ="Votre grade est C";
+	}else if (score >=65 && score <=69){
+		message ="Votre grade est D"; 
+	}else{
+		message ="Votre grade est F";
 	}
 
-while (grade(score) <100){
+	return message;
+};
 
-		if(score >90){
-			var message= "votre grade est A";
-		}else if (score >80 && score <89){
-			var message= "Votre grade est B";
-		}else if (score >70 && score <79){
-			var message= "Votre grade est C";
-		}else if (score >65 && score <69){
-			var message= "Votre grade est D";
-		}else {
-			var message= "Votre grade est F";
-		}
+var score=0;
 
+while (score<101)
+{
+	console.log(score);
+	console.log(grade(score));
+	score+=1;
+
+};
 
 
-	console.log(message);
-}*/
 
 //Exercice 4
 
-symbole = 5;
+var symbole = "*";
 
-for (i=0; i<symbole; i++){
-}
+for (i=0; i<5; i++){
+	console.log(symbole);
+	symbole+="*";
+};
