@@ -1,59 +1,60 @@
-//Exercice du pendu
-
-
-var mot=prompt("Entrez un mot mystère");
-var motMystere = mot;
+let motPendu = ["B","O","N","J","O","U","R"];
+let motTrouve = ["_", "_", "_", "_", "_", "_", "_"];
+var penduEntier = motPendu.join("");
+var trouveEntier = motTrouve.join();
+var message = "";
+var longeurMotPendu = motPendu.length;
+var tentativeTotale = 0;
+var tentativeJouee = 0;
 var tentativeRatee = 0;
-var lettreChoisie = "";
+var essaiRestant = longeurMotPendu - tentativeRatee;
+let lettreJouee = [];
 
-var guessLetter = function(){
-	if(motMystere.length !=0){
-		lettreChoisie = prompt('Entrez une lettre');
-	};
-};
+function guessLetter() {
+	if (essaiRestant == 0){
+		alert("Vous n'avez plus d'essais");
+	}
 
-guessLetter();
+	var essai = window.prompt (message + " Entrez une lettre " + trouveEntier, "");
+	essai = essai.toUpperCase();
+	console.log(essai);
 
-
-
-
-
-/*let lettres =['B', 'O', 'N', 'J', 'O', 'U', 'R'];
-
-let devin = ["","","","","","","","_"];
-
-var tentativeRatee = 0;
-
-var tentativePossible = lettres.length;
-
-var guestLetter = function(lettres){
-
-	while (tentativePossible !=0){
-
-	for(let i=0; i<lettres.length; i++){
-		
-	var lettreChoisie = prompt('Entrez une lettre');
-
-	if (lettreChoisie == lettres[i]){
-		alert('Bien joué, on continue');
-		devin.push(lettreChoisie);
-			for(let j=0; j<lettres.length; j++){
-				console.log(devin[j]);
-			};
-		
+	if (essai == penduEntier){
+		tentativeJouee++;
+		alert("Vous avez gagné!");
+	}else if (essai.length != 1){
+		message = "Essaie encore";
+		console.log(message);
+		guessLetter();
+	}else if (lettreJouee.indexOf(essai) != -1){
+		tentativeJouee++;
+		tentativeRatee++;
+		essaiRestant = longeurMotPendu - tentativeRatee;
+		alert("Déjà tenté!");
+		guessLetter();
 	}else{
-		alert('Essaie encore');
-		tentativeRatee+=1;
-	};
-
-	};
-	tentativePossible-=1;
-		if (tentativePossible=0){
-			alert("Vous n'avez plus de possibilités");
-		};
-	};
-
-	return;
+		lettreJouee.push(essai);
+		tentativeJouee++;
+		if (motPendu.indexOf(essai) == -1){
+			tentativeRatee++;
+			essaiRestant = longeurMotPendu - tentativeRatee;
+			alert("Essaie encore");
+			guessLetter;
+		}
+		for (i=0; i<longeurMotPendu; i++){
+			if (essai == motPendu[i]){
+				motTrouve.splice(i,1,essai);
+				tentativeTotale++;
+				trouveEntier= motTrouve.join();
+				alert("Bien joué");
+			}
+		}
+	if (tentativeTotale != longeurMotPendu){
+		guessLetter();
+	}else{
+		alert("Vous avez gagné!")
+	}
+	}
 }
 
-guestLetter();*/
+guessLetter();
