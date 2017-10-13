@@ -13,6 +13,7 @@ let lettreJouee = [];
 function guessLetter() {
 	if (essaiRestant == 0){
 		alert("Vous n'avez plus d'essais");
+		<button><a href=""
 	}
 
 	var essai = window.prompt (message + " Entrez une lettre " + trouveEntier, "");
