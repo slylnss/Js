@@ -61,12 +61,70 @@ armes.forEach(function(Armes){
 affiche();
 
 function armes_dispo() {
-	if(function renvoie(available.caractéristiques == true){
-		console.log(Armes.renvoie());
-	}	
+	armes.forEach(function(Armes){
+		if(Armes.available == true)
+		console.log("Armes disponible en magasin : " + Armes.nom_arme);
+	});
 }
 
 armes_dispo();
+
+function niveau_min() {
+	armes.forEach(function(Armes){
+		if(Armes.minLevel >= 10)
+			console.log("Armes pour level 10 min : "+ Armes.nom_arme, Armes.minLevel);
+	});
+}
+
+niveau_min();
+
+
+// Création personnage
+
+let mainCharacter = {
+	name : "Miko",
+	level: 4,
+	life: 100
+};
+
+let weapon = {
+	name : "Epée",
+	dégats_physique: 5,
+};
+
+function attack(){
+		var dégats_causé = mainCharacter.level*weapon.dégats_physique;
+		console.log(mainCharacter.name + " attaque avec " + weapon.name + " et les dégats sont de " + dégats_causé);
+	};
+
+attack();
+
+
+// Bonus Adversaire
+function perso (){
+		var character = 
+		"Name:" + this.name + 
+		"Level : " + this.level +
+		"Life : " +" "+ this.life + " "+
+		return character;
+	};
+
+var Tiko = Object.create(perso);
+Tiko.character('Tiko', 7, 100);
+
+let weaponn = {
+	name: "Baton",
+	damage: 5,
+};
+
+function Attack(){
+	var dégats_causé = character.level*weaponn.damage;
+		console.log(character.name + " attaque avec " + weaponn.name + " et les dégats sont de " + dégats_causé);
+};
+
+Attack();
+
+
 
 
 
