@@ -101,28 +101,38 @@ attack();
 
 
 // Bonus Adversaire
-function perso (){
-		var character = 
-		"Name:" + this.name + 
-		"Level : " + this.level +
-		"Life : " +" "+ this.life + " "+
-		return character;
+
+function character(name, level, life, name, damage){
+	this.name = name;
+	this.level = level;
+	this.life = life;
+	this.weapon ={
+		name, damage
 	};
+}
 
-var Tiko = Object.create(perso);
-Tiko.character('Tiko', 7, 100);
+function opponentCharacter(name, level, life, name, damage){
+	this.name = name;
+	this.level = level;
+	this.life = life;
+	this.weapon ={
+		name, damage
+	};
+}
 
-let weaponn = {
-	name: "Baton",
-	damage: 5,
-};
+function mainCharacter(name, level, life, name, damage){
+	this.name = name;
+	this.level = level;
+	this.life = life;
+	this.weapon ={
+		name, damage
+	};
+}
 
-function Attack(){
-	var dégats_causé = character.level*weaponn.damage;
-		console.log(character.name + " attaque avec " + weaponn.name + " et les dégats sont de " + dégats_causé);
-};
+opponentCharacter.prototype = Object.create(character.prototype);
+mainCharacter.prototype = Object.create(character.prototype);
 
-Attack();
+
 
 
 
