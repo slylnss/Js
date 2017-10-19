@@ -93,8 +93,9 @@ let weapon = {
 };
 
 function attack(){
-		var dégats_causé = mainCharacter.level*weapon.dégats_physique;
+		let dégats_causé = mainCharacter.level*weapon.dégats_physique;
 		console.log(mainCharacter.name + " attaque avec " + weapon.name + " et les dégats sont de " + dégats_causé);
+		return dégats_causé;
 	};
 
 attack();
@@ -102,35 +103,36 @@ attack();
 
 // Bonus Adversaire
 
-function character(name, level, life, name, damage){
-	this.name = name;
-	this.level = level;
-	this.life = life;
-	this.weapon ={
-		name, damage
-	};
-}
+let character = {
+	name : "Tiko",
+	level : 5,
+	life : 100,
+	weapon : weapon,
+	Fight : function() {
+		var message = mainCharacter.name + " attaque " + opponentCharacter.name;
+		message += "avec l'arme " + weapon.name;
+		message += "et lui inflige " + damage + " de dégats ";
+		message += opponentCharacter.name + " a maintenant " + character.receiveDamage() + " de vie";
+		return console.log(message);
+	},
 
-function opponentCharacter(name, level, life, name, damage){
-	this.name = name;
-	this.level = level;
-	this.life = life;
-	this.weapon ={
-		name, damage
-	};
-}
+	receiveDamage : function() {		
+		let restLife = opponentCharacter.life - damage;
+		return restLife;
+	}
+};
 
-function mainCharacter(name, level, life, name, damage){
-	this.name = name;
-	this.level = level;
-	this.life = life;
-	this.weapon ={
-		name, damage
-	};
-}
+let damage = mainCharacter.level * weapon.dégats_physique;
 
-opponentCharacter.prototype = Object.create(character.prototype);
-mainCharacter.prototype = Object.create(character.prototype);
+let opponentCharacter = {
+	name : "Siko",
+	level : 7,
+	life : 100,
+	weapon : weapon
+};
+
+character.Fight();
+
 
 
 
