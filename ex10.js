@@ -39,3 +39,10 @@ paragraphe = document.querySelectorAll("p")[i].setAttribute("class", "shadow");
 
 //Exercice 3
 
+elem = document.getElementsByTagName("pre");
+console.log(elem);
+
+elem = elem.style.color = "blue";
+
+
+
