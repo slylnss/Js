@@ -39,10 +39,53 @@ paragraphe = document.querySelectorAll("p")[i].setAttribute("class", "shadow");
 
 //Exercice 3
 
-elem = document.getElementsByTagName("pre");
+elem = document.querySelector("pre");
 console.log(elem);
 
-elem = elem.style.color = "blue";
+elem.style.color = "blue";
+elem.style.backgroundColor = "white";
+elem.style.borderTop = "solid red 3px";
+elem.style.borderBottom = "solid red 3px";
 
 
+firstH3= document.querySelector("H3");
+console.log(firstH3);
 
+firstH3.innerHTML = "<em>Itelic title ! yeah !</em>";
+
+firstH2 = document.querySelector("H2");
+console.log(firstH2);
+
+firstH2.innerHTML = "<strong>HTML doens't work !</strong>";
+firstH2.style.color = "red";
+
+//Exercice 4
+
+firstUl = document.querySelector("ul");
+console.log(firstUl);
+
+ajoutLi = document.createElement("li")
+firstUl.appendChild(ajoutLi);
+ajoutLi.innerHTML="Mon meilleur ami est <a href='http://www.google.com'>Google</a>";
+
+firstLien = document.querySelector("ul").querySelector("a");
+console.log(firstLien);
+
+firstLien.style.color ="red";
+
+//Exercice 4 bis
+
+firstOl = document.querySelector("ol");
+console.log(firstOl);
+
+while (firstOl.firstChild){
+	firstOl.removeChild(firstOl.firstChild);
+}
+
+var nouvellesValeurs=["Silent Teacher","Code Monkey","Code Combat"];
+
+for (i=0; i<nouvellesValeurs.length; i++){
+	nouvelElement = document.createElement("li");
+	firstOl.appendChild(nouvelElement);
+	nouvelElement.innerHTML= nouvellesValeurs[i];
+}
