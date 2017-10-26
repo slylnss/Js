@@ -12,7 +12,7 @@ console.log(firstParagraphe);
 firstParagraphe = document.getElementById("first-paragraph").removeAttribute("class", "bg-lime gray");
 firstParagraphe = document.getElementById("first-paragraph").setAttribute("class", "aqua");
 
-Bgsilver = document.getElementsByClassName('bg-silver');
+Bgsilver = document.getElementsByClassName("bg-silver");
 console.log(Bgsilver);
 
 Bgsilver = document.getElementsByTagName("blockquote")[0].removeAttribute("class", "bg-silver");
