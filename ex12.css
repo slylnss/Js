@@ -1,0 +1,16 @@
+
+.hoverMe {
+
+  transition: opacity 1s cubic-bezier(0.12, 1.86, 0, -0.81);
+
+  opacity: 1;
+
+}
+
+
+
+.disparition {
+
+  display:none;
+
+} 
