@@ -1,0 +1,38 @@
+body{
+  width: 100%;
+  height: 100%;
+}
+#character{
+  width: 33%;
+  height: 33%;
+  background-color: red;
+ }
+
+.highlight{
+  opacity: 0.5;
+}
+
+.container{
+  text-align: center;
+  margin: auto;
+}
+
+#up{
+  width: 70px;
+  height: 70px;
+  border: 1px solid black;
+  margin: auto;
+  background-color: grey;
+  margin-bottom: 4px;
+}
+
+
+
+#down, #left, #right{
+  width: 70px;
+  height: 70px;
+  border: 1px solid black;
+  margin: auto;
+  display: inline-block;
+  background-color: grey;
+}
